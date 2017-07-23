@@ -5,7 +5,7 @@ const web3 = new Web3();
 
 web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
 
-const address = '0x4e3eb0fb84fc73398c9e70591cc56897a89d97d8';
+const address = web3.eth.accounts[0];
 
 const code = fs.readFileSync('Voting.sol').toString()
 const compiledCode = solc.compile(code)
