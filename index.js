@@ -1,3 +1,5 @@
+// Ignore this file, this is me trying to get it working with a new version of web3
+
 const fs = require('fs');
 const Web3 = require('web3');
 const web3 = new Web3();
@@ -15,12 +17,12 @@ const byteCode = compiledCode.contracts[':Voting'].bytecode
 
 const VotingContract = new web3.eth.Contract(abiDefinition, null, {
   from: address, // default from address
-  gasPrice: '20000000000000' // default gas price in wei
+  gasPrice: '20000000000' // default gas price in wei
 });
 
 VotingContract.deploy({
     data: byteCode,
-    arguments: [['faraaz', 'tito']]
+    arguments: [['John', 'Doe']]
 })
 .send({
     from: address,
